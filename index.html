@@ -106,13 +106,13 @@
                             <p class="mb-4">O banco de dados foi modelado para atender todas as necessidades de uma barbearia moderna, com relacionamentos bem definidos e integridade referencial.</p>
                             <img src="assets/img/diagrama-barbearia.png" alt="Diagrama Entidade-Relacionamento" class="img-fluid mb-4">
 
-                            <div class="row mt-5">
-                                <div class="col-md-6">
-                                    <div class="card mb-4">
+                            <div class="row mt-5" style="align-items: start;">
+                                <div class="col-md-6 d-flex flex-column">
+                                    <div class="card mb-4" style="height: 240px;">
                                         <div class="card-header bg-primary text-white">
                                             <h5 class="mb-0"><i class="fas fa-users"></i> Tabela: clientes</h5>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column justify-content-between">
                                             <ul class="list-unstyled mb-0">
                                                 <li><strong>id:</strong> Chave primária (SERIAL)</li>
                                                 <li><strong>nome:</strong> Nome completo (VARCHAR 100)</li>
@@ -124,11 +124,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="card mb-4">
+                                    <div class="card mb-4" style="height: 240px;">
                                         <div class="card-header bg-success text-white">
                                             <h5 class="mb-0"><i class="fas fa-cut"></i> Tabela: servicos</h5>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column justify-content-between">
                                             <ul class="list-unstyled mb-0">
                                                 <li><strong>id:</strong> Chave primária (SERIAL)</li>
                                                 <li><strong>nome:</strong> Nome único do serviço (VARCHAR 100)</li>
@@ -140,31 +140,45 @@
                                         </div>
                                     </div>
 
-                                    <div class="card mb-4">
+                                    <div class="card mb-4" style="height: 200px;">
+                                        <div class="card-header bg-danger text-white">
+                                            <h5 class="mb-0"><i class="fas fa-ban"></i> Tabela: datas_bloqueadas</h5>
+                                        </div>
+                                        <div class="card-body d-flex flex-column justify-content-between">
+                                            <ul class="list-unstyled mb-0">
+                                                <li><strong>id:</strong> Chave primária (SERIAL)</li>
+                                                <li><strong>data:</strong> Data bloqueada única (DATE)</li>
+                                                <li><strong>motivo:</strong> Razão do bloqueio (VARCHAR 255)</li>
+                                                <li><strong>criado_em:</strong> Data do bloqueio (TIMESTAMP)</li>
+                                            </ul>
+                                            <small class="text-muted">Gerencia feriados e dias indisponíveis para agendamentos.</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 d-flex flex-column">
+                                    <div class="card mb-4" style="height: 240px;">
                                         <div class="card-header bg-warning text-white">
                                             <h5 class="mb-0"><i class="fas fa-calendar-alt"></i> Tabela: agendamentos</h5>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column justify-content-between">
                                             <ul class="list-unstyled mb-0">
                                                 <li><strong>id:</strong> Chave primária (SERIAL)</li>
                                                 <li><strong>cliente_id:</strong> FK para clientes</li>
                                                 <li><strong>servico_id:</strong> FK para servicos</li>
                                                 <li><strong>data_agendada:</strong> Data do serviço (DATE)</li>
                                                 <li><strong>hora_agendada:</strong> Horário (TIME)</li>
-                                                <li><strong>observacoes:</strong> Notas especiais (TEXT)</li>
-                                                <li><strong>status:</strong> Estado do agendamento</li>
+                                                <li><strong>observacoes:</strong> Notas especiais (TEXT)</li>                                              
                                             </ul>
-                                            <small class="text-muted">Núcleo do sistema: relaciona clientes e serviços com controle de status e constraint de unicidade.</small>
+                                            <small class="text-muted">Núcleo do sistema: relaciona clientes e serviços com controle de status.</small>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="col-md-6">
-                                    <div class="card mb-4">
+                                    <div class="card mb-4" style="height: 240px;">
                                         <div class="card-header bg-info text-white">
                                             <h5 class="mb-0"><i class="fas fa-history"></i> Tabela: logs_agendamentos</h5>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column justify-content-between">
                                             <ul class="list-unstyled mb-0">
                                                 <li><strong>id:</strong> Chave primária (SERIAL)</li>
                                                 <li><strong>agendamento_id:</strong> FK para agendamentos</li>
@@ -177,26 +191,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="card mb-4">
-                                        <div class="card-header bg-danger text-white">
-                                            <h5 class="mb-0"><i class="fas fa-ban"></i> Tabela: datas_bloqueadas</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            <ul class="list-unstyled mb-0">
-                                                <li><strong>id:</strong> Chave primária (SERIAL)</li>
-                                                <li><strong>data:</strong> Data bloqueada única (DATE)</li>
-                                                <li><strong>motivo:</strong> Razão do bloqueio (VARCHAR 255)</li>
-                                                <li><strong>criado_em:</strong> Data do bloqueio (TIMESTAMP)</li>
-                                            </ul>
-                                            <small class="text-muted">Gerencia feriados e dias indisponíveis para agendamentos.</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mb-4">
+                                    <div class="card mb-4" style="height: 200px;">
                                         <div class="card-header bg-dark text-white">
                                             <h5 class="mb-0"><i class="fas fa-link"></i> Relacionamentos</h5>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body d-flex flex-column justify-content-between">
                                             <ul class="list-unstyled mb-0">
                                                 <li><span class="badge bg-primary">1:N</span> clientes → agendamentos</li>
                                                 <li><span class="badge bg-success">1:N</span> servicos → agendamentos</li>
