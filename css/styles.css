@@ -1,4 +1,28 @@
 @charset "UTF-8";
+
+/*
+===========================================
+  BARBEARIA DO ALÉM - PROJETO INTEGRADOR
+  TI-35 / TDS-1 - Senac Botucatu
+===========================================
+  
+  ESTRUTURA DO ARQUIVO:
+  1. Variáveis CSS (Bootstrap Variables)
+  2. Reset & Base Styles
+  3. Typography (Títulos e Textos)
+  4. Layout & Grid System
+  5. Navigation & Sidebar
+  6. Sections & Content Areas
+  7. Components (Cards, Buttons, Forms)
+  8. Media Queries (Responsividade)
+  9. Custom Styles (Player de Áudio, etc)
+  
+===========================================
+*/
+
+/* ========================================= */
+/*           1. VARIÁVEIS CSS                */
+/* ========================================= */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -68,6 +92,10 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+/* ========================================= */
+/*        2. RESET & BASE STYLES             */
+/* ========================================= */
+
 *,
 *::before,
 *::after {
@@ -80,6 +108,7 @@
   }
 }
 
+/* Base Body Styles */
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -93,6 +122,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/* Horizontal Rule */
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -101,6 +131,11 @@ hr {
   opacity: 0.25;
 }
 
+/* ========================================= */
+/*           3. TYPOGRAPHY                   */
+/* ========================================= */
+
+/* Títulos - usando fonte Saira Extra Condensed */
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
@@ -374,7 +409,7 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+  -webkit-appearance: button; 
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -616,6 +651,11 @@ progress {
   color: #6c757d;
 }
 
+/* ========================================= */
+/*        4. LAYOUT & GRID SYSTEM            */
+/* ========================================= */
+
+/* Bootstrap Container System */
 .container,
 .container-fluid,
 .container-xxl,
@@ -1981,6 +2021,11 @@ progress {
   color: #6c757d;
 }
 
+/* ========================================= */
+/*        7. COMPONENTS (Forms)              */
+/* ========================================= */
+
+/* Form Controls */
 .form-control {
   display: block;
   width: 100%;
@@ -2756,6 +2801,11 @@ textarea.form-control-lg {
   z-index: 4;
 }
 
+/* ========================================= */
+/*         7. COMPONENTS (Buttons)           */
+/* ========================================= */
+
+/* Bootstrap Buttons */
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
@@ -3716,6 +3766,11 @@ textarea.form-control-lg {
   display: block;
 }
 
+/* ========================================= */
+/*        5. NAVIGATION & SIDEBAR            */
+/* ========================================= */
+
+/* Bootstrap Navbar */
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
@@ -4139,6 +4194,11 @@ textarea.form-control-lg {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* ========================================= */
+/*        7. COMPONENTS (Cards)              */
+/* ========================================= */
+
+/* Bootstrap Cards */
 .card {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
@@ -6645,6 +6705,12 @@ textarea.form-control-lg {
   content: "";
 }
 
+/* ========================================= */
+/*        8. UTILITY CLASSES                 */
+/*      (Text, Background, Display)          */
+/* ========================================= */
+
+/* Text with Background Colors */
 .text-bg-primary {
   color: #000 !important;
   background-color: RGBA(189, 93, 56, var(--bs-bg-opacity, 1)) !important;
@@ -10929,10 +10995,21 @@ p.lead {
   background-color: #bd5d38;
 }
 
+/* ========================================= */
+/*           9. CUSTOM STYLES                */
+/*      (Específicos do Projeto)            */
+/* ========================================= */
+
+/* Ícones de Tecnologia */
 .dev-icons {
   font-size: 3rem;
 }
 
+/* ========================================= */
+/*        SEÇÕES PRINCIPAIS DO SITE         */
+/* ========================================= */
+
+/* Resume Section - Layout principal das seções */
 section.resume-section {
   display: flex;
   align-items: center;
@@ -10951,6 +11028,7 @@ section.resume-section .resume-section-content {
     min-height: 100vh;
   }
 }
+/* Media Queries para Responsividade */
 @media (min-width: 992px) {
   section.resume-section {
     padding-left: 3rem;
@@ -10959,3 +11037,62 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+/* ========================================= */
+/*        ESTILOS CUSTOMIZADOS PROJETO      */
+/* ========================================= */
+
+/* Padronização das Imagens das Telas */
+#funcionalidades img {
+  width: 100%;
+  max-width: 350px;
+  height: 280px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  display: block;
+  border: 2px solid #bd5d38;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  background: #f8f9fa;
+  padding: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Container para layout horizontal das imagens */
+.imagens-horizontal {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.imagem-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+#funcionalidades img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #funcionalidades img {
+    max-width: 100%;
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  #funcionalidades img {
+    height: 250px;
+  }
+}
+
+/* ========================================= */
+/*              FIM DOS ESTILOS              */
+/*        BARBEARIA DO ALÉM - 2024           */
+/* ========================================= */
